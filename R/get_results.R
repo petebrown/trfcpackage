@@ -28,7 +28,7 @@ get_results <- function() {
                "stadium")
     ) %>%
     dplyr::left_join(game_ids, by = "game_date") %>%
-    dplyr::inner_join(
+    dplyr::left_join(
       results_mini %>% dplyr::select("game_date", "pts"), by = "game_date"
     ) %>%
     dplyr::rename(ssn_pts = .data$pts)
