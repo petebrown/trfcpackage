@@ -1,6 +1,6 @@
 Package: trfcpackage
 Title: Prepare Data For Tranmere Rovers: An Incomplete Record
-Version: 0.0.0.9000
+Version: 0.0.0.9100
 Authors@R: 
     person("Brown", "Pete", , "pete@petebrown.codes", role = c("aut", "cre"))
 Description: Prepares CSV for analysis of Tranmere Rovers historical data.
