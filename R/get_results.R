@@ -20,16 +20,16 @@ get_results <- function() {
 
   results_df <- readr::read_csv("https://raw.githubusercontent.com/petebrown/update-results/main/data/results_df.csv", show_col_types = FALSE) %>%
     dplyr::select(-
-             c(.data$home_team,
-               .data$away_team,
-               .data$home_goals,
-               .data$away_goals,
-               .data$source_url,
-               .data$stadium)
+             c("home_team",
+               "away_team",
+               "home_goals",
+               "away_goals",
+               "source_url",
+               "stadium")
     ) %>%
     dplyr::left_join(game_ids, by = "game_date") %>%
     dplyr::inner_join(
-      results_mini %>% dplyr::select(.data$game_date, .data$pts), by = "game_date"
+      results_mini %>% dplyr::select("game_date", "pts"), by = "game_date"
     ) %>%
     dplyr::rename(ssn_pts = .data$pts)
 

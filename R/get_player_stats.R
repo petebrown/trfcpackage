@@ -28,13 +28,13 @@ get_player_stats <- function() {
       game_id = as.numeric(.data$game_id)
     ) %>%
     dplyr::select(
-      .data$player_id,
-      .data$player_name,
-      .data$game_id,
-      .data$game_date,
-      .data$pl_goals,
-      .data$yellow_cards,
-      .data$red_cards
+      "player_id",
+      "player_name",
+      "game_id",
+      "game_date",
+      "pl_goals",
+      "yellow_cards",
+      "red_cards"
     ) %>%
     dplyr::full_join(subs_and_reds, by = c("game_id", "player_id")) %>%
     dplyr::mutate(

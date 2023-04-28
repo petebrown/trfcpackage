@@ -15,8 +15,8 @@ get_game_ids <- function() {
 
   game_ids <- game_ids %>%
     dplyr::select(
-      .data$game_date,
-      .data$game_id
+      "game_date",
+      "game_id"
     ) %>%
     unique()
 
